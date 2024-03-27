@@ -1,3 +1,7 @@
+#
+# This program generate random Lotto numbers using random module
+#
+
 # import random module
 import random
 

@@ -1,3 +1,8 @@
+#
+# This code get usb size from user and calculate how much files can be stored.
+# In this program, we assume that image size is 800 x 600
+#
+
 # import math module for floor function
 import math
 

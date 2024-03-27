@@ -1,3 +1,8 @@
+#
+# This program get ean code from user and generate validation code.
+# To get EAN code's each digit, I convert user input to int type and calculate each digit using % and //.
+#
+
 # Get EAN code
 ean = int(input("Enter the first 12 digits of an EAN: "))
 

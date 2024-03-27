@@ -1,3 +1,10 @@
+#
+# This program calculates the difference in seconds between the birth dates of two people.
+# Fist, I used 1900 January 1st as reference point and calculate gap between birth date of people.
+# Second, Calculate gap second between two people.
+# Last, print result of this program.
+#
+
 # Get Person 1 birth information
 person1_month = int(input("Person 1: Enter month born (1-12): "))
 person1_day = int(input("Person 1: Enter day born (1-31): "))
