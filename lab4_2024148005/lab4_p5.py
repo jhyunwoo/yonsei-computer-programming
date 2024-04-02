@@ -16,7 +16,7 @@ while which != 'F' and which != 'C':
 temp = int(input('Enter temperature to convert: '))
 
 # if temperature is not valid, repeat previous step
-while (which is 'F' and temp < -459.67) or (which is 'C' and temp < -273.15):
+while (which == 'F' and temp < -459.67) or (which == 'C' and temp < -273.15):
     temp = int(input('Enter temperature to convert: '))
 
 # Determine temperature conversion needed and display results
