@@ -42,8 +42,8 @@ q3_d_answer = False
 #
 q4_a_answer = "24 " + "not in" + " nums"
 q4_b_answer = "'Ellen' " + "in" + " names"
-q4_c_answer = "last_name " + "is" + " 'Morris' " + "or" + \
-                " last_name " + "is" + " 'Morrison'"
+q4_c_answer = "last_name " + "==" + " 'Morris' " + "or" + \
+                " last_name " + "==" + " 'Morrison'"
 
 #
 # Q5: please fill in the empty string with your answer (string):
