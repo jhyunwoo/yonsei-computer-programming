@@ -17,6 +17,7 @@ while not stop:
     a = float(input("Enter a number: "))
     if a > 0:  # if user input is bigger than 0
         if a > first:  # if user input is bigger than first number, user input is assigned to first variable
+            second = first  # Fucking mistake!!
             first = a
         elif a > second:  # if user input is bigger than second number, user input is assigned to second variable
             second = a
