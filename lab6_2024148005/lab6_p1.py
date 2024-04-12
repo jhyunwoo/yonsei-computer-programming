@@ -5,21 +5,25 @@
 
 # Take user's name
 name = input("Enter a first and last name: ")
+# Variable that store first name
+first_name = ""
+# Variable that store last name
+last_name = ""
+# Variable that store name data
+name_data = ""
 
-# Variable that store index of first letter in user input
-index_of_first_letter = 0
+# Find first and last name in user input using for loop
+for letter in name:
+    if letter.isalpha():  # If letter is alphabet, add letter to name_data
+        name_data += letter
+    elif letter.isspace() and name_data != "" and first_name == "":  # After find all firstname,
+        first_name = name_data  # Assign into first_name variable
+        name_data = ""  # Reset name_data variable for find last name
 
-# Find first letter index using for loop
-for cha in name:
-    if cha == " ":  # if cha is space, increase index_of_first_letter variable
-        index_of_first_letter += 1
-    else:  # if cha is letter, stop find index_of_first_letter
-        break
-
-name = name[index_of_first_letter:]
+last_name = name_data
 
 # Split user's name to first name and last name using split method
 name_list = name.split(" ")
 
 # Print result
-print(f"{name_list[1]}, {name_list[0][0]}.")
+print(f"{last_name}, {first_name[0]}.")
