@@ -1,3 +1,7 @@
+#
+# This program get ISBN from user input and grouping number system and print it out.
+#
+
 # Get ISBN from user
 isbn = input("Enter an ISBN: ")
 # Split ISBN by dash
