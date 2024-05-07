@@ -33,7 +33,7 @@ q1_e_answer = True
 #
 q2_a_answer = [1, 1, 1]
 q2_b_answer = [1, 1, 0]
-q2_c_answer = [1, 0, 1]
+q2_c_answer = [1, 1, 1]
 q2_d_answer = [2, 2, 2]
 q2_e_answer = [2, 1, 2]
 

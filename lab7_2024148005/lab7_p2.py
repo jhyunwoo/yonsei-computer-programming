@@ -6,8 +6,8 @@ def ordered3(a, b, c):
     :param c: integer
     :return: Boolean
     """
-    if a <= b <= c:
+    if a <= b <= c:  # if a, b, c is order by smallest to largets, return True
         return True
-    else:
+    else:  # else return False
         return False
 
