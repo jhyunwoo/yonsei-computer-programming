@@ -18,11 +18,11 @@
 # E.g., q1_1_occurrences = [(2, "n", "x"), (5, "n", "y")...]
 #
 q1_a_answer = "11 20"
-q1_a_occurrences = [(8, 'n', 'global'), (9, 'x', 'global'), (10, 'y', 'global')]
+q1_a_occurrences = [(2, 'n', 'global'), (5, 'n', 'foo1'), (6, 'n', 'foo1'), (9, 'n', 'global'), (11, 'x', 'global'), (11, 'y', 'global')]
 q1_b_answer = "2"
-q1_b_occurrences = [(8, 'x', 'global'), (5, 'x', 'foo'), (3, 'y', 'bar')]
+q1_b_occurrences = [(3, 'x', 'foo'), (4, 'y', 'bar')]
 q1_c_answer = "1"
-q1_c_occurrences = [(8, 'x', 'global'), (3, 'y', 'bar')]
+q1_c_occurrences = [(3, 'x', 'global'), (4, 'y', 'bar')]
 
 ##############################################################################
 # Grading code. Please do not touch any code below this line:                #

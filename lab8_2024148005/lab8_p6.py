@@ -30,18 +30,10 @@ def lookAndSay(n, i):
         look_list = sum(say_list, [])  # init look_list to say_list
 
     cycle = False  # Check this look and say process have cycle
-    check_length = 1  # Grop length of cycle
-
-    # Check if look and say process have cycle
-    for _ in range(len(final_result)):
-        for k in range(0, len(final_result), check_length):
-            if k < len(final_result)-check_length:
-                check_value = ""  # Variable for check this process have cycle
-                for i in range(check_length):
-                    check_value += final_result[k + i]  # Add to check_value for check_length times
-                if final_result[k] == final_result[k+check_length]:  # If final_result have cycle, update cycle variable
-                    cycle = True
-        check_length += 1
+    for result in final_result:
+        if final_result.count(result) > 1:
+            cycle = True
 
     # Return cycle
     return cycle
+
