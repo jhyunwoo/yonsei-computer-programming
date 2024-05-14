@@ -41,9 +41,12 @@ while True:
             rpn = rpn[:count - 2] + [result] + rpn[count + 1:]
             count -= 1
         elif rpn[count] == "/":  # Calculate divide
-            result = float(rpn[count - 2]) / float(rpn[count - 1])
-            rpn = rpn[:count - 2] + [result] + rpn[count + 1:]
-            count -= 1
+            if float(rpn[count-1]) == 0:
+                error = True
+            else:
+                result = float(rpn[count - 2]) / float(rpn[count - 1])
+                rpn = rpn[:count - 2] + [result] + rpn[count + 1:]
+                count -= 1
         elif rpn[count] == "+":  # Calculate plus
             result = float(rpn[count - 2]) + float(rpn[count - 1])
             rpn = rpn[:count - 2] + [result] + rpn[count + 1:]
@@ -52,11 +55,11 @@ while True:
             result = float(rpn[count - 2]) - float(rpn[count - 1])
             rpn = rpn[:count - 2] + [result] + rpn[count + 1:]
             count -= 1
-        elif (str(rpn[count])).isnumeric() and rpn[count] != "=":  # If rpn[count] is not operator, increase count variable
+        # If rpn[count] is not operator, increase count variable
+        elif (str(rpn[count])).isnumeric() and rpn[count] != "=":
             count += 1
         else:  # If rpn[count] is not an operator or not an operand, handle as error
             error = True
-            break
 
     # Print out result
     if not error:
