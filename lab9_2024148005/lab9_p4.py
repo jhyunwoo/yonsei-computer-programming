@@ -1,6 +1,3 @@
-import turtle
-
-
 def drawCoordinates(myturtle, coordList, d):
     """ Draw a line between coordinate points on the screen.
     coordList contains a tuple of sub-tuples. Each
