@@ -1,0 +1,3 @@
+This lin has xtra   spac     charactrs
+    This lin starts with xtra spac charactrs
+
