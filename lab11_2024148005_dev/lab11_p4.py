@@ -1,7 +1,3 @@
-#
-# This program will determine the correlation (-1 to 1) between data on air pollution and incidences of lung cancer
-#
-
 import math  # Import the math module for mathematical operations
 
 def openFiles():

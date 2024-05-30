@@ -1,7 +1,3 @@
-#
-# This program contains newItem function that add item on file
-#
-
 def newItem(item: str, cost: int, outputFile: str):
     """
     Takes an item and its cost, and appends them to a text file called outputFile.

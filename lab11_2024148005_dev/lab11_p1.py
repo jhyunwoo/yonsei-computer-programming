@@ -1,7 +1,3 @@
-#
-# This Program show cellular automaton using python list
-#
-
 import time  # Import time module for delaying the output
 
 SIZE = 20  # Size of the 2D cellular automaton grid

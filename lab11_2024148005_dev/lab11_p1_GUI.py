@@ -1,33 +1,10 @@
-#
-# This Program show cellular automaton using python list
-#
-
 import time  # Import time module for delaying the output
+import turtle
 
 SIZE = 20  # Size of the 2D cellular automaton grid
 work = []  # List to store the current generation grid
 tmp = []  # Temporary list for processing the next generation
 
-
-def printSep():
-    '''Print a separator line for the grid.'''
-    for ctr in range(0, SIZE + 2):  # Loop to print SIZE + 2 dashes
-        print('-', end='')  # Print a dash without a newline
-    print('')  # Print a newline at the end
-
-
-def printWorld(world):
-    '''Print the current generation of the world grid.
-       Uses printSep() to print the border separators.
-    '''
-    printSep()  # Print the top border
-    for k in range(len(world)):  # Loop through each row in the grid
-        print("|", end='')  # Print the left border
-        for cell in world[k]:  # Loop through each cell in the row
-            print(cell, end='')  # Print the cell value without a newline
-        print("|", end=' ')  # Print the right border and a space
-        print(f"row {k}")  # Print the row number for reference
-    printSep()  # Print the bottom border
 
 
 def next_generation(world):
@@ -103,10 +80,47 @@ for i in range(20):  # Loop through the first 20 rows
 for j in range(SIZE - 20):  # Loop to add additional rows if SIZE > 20
     work.append([" "] * SIZE)  # Add a new row with SIZE columns
 
+# Setup turtle window width
+turtle_width = 800
+# Setup turtle window height
+turtle_height = 800
+
+# Set Turtle window
+turtle.setup(turtle_width, turtle_height)
+# Set Turtle tracer
+turtle.tracer(1)
+# Set Turtle window
+window = turtle.Screen()
+# Set window title
+window.title("Cellular Automaton")
+# Create new turtle object
+t = turtle.Turtle()
+# Set turtle speed
+t.speed(10)
+
+def drawWork(turtle, work):
+    """
+    draw GUI using work list and turtle
+    :param turtle: turtle object
+    :param work: 2d list
+    :return: Nothing
+    """
+    turtle.clear()  # Clear previous turtle
+    rows = len(work[0])  # Get how many cells in work list
+    x = turtle_width / (rows + 1)  # Calculate one block's width
+    y = turtle_height / (rows + 1)  # Calculate one block's height
+    turtle.penup()  # turtle penup
+    for i in range(len(work)):  # For loop for draw every lines
+        for j in range(len(work[i])):  # For loop for draw every cell
+            if work[i][j] == "x":  # if cell is live, draw dot
+                turtle.setposition((i+1)*x-400, 400-(j+1)*y)  # Move to position
+                turtle.dot(5, 'black')  # Draw dot on live cell
+
+
 compute = 0  # Initialize the compute counter
 # Compute and display each generation until the specified generation limit
 while compute <= generation:  # Loop until the max generation is reached
-    printWorld(work)  # Display the current generation
+    drawWork(t, work)
     work = next_generation(work)  # Calculate the next generation
     time.sleep(1)  # Wait for 1 second before the next generation
     compute += 1  # Increment the generation counter
