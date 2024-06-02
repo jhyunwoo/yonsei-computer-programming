@@ -1,0 +1,2 @@
+The program will open file foo.key to load the key decrypt file foo.enc and store the result in file foo.txt.
+If a filename provided by the user does not exist you can terminate the program with any given error message or exception.
