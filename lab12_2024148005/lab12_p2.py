@@ -8,7 +8,8 @@ Lab problem: lab12_p2.py
 # This program filter average temperature
 #
 
-def moderateDays(mydict):
+
+def moderateDays(mydict): 
     """
     Returns a list of the days for which the average temperature
     was between 70 and 79 degrees.
@@ -20,9 +21,11 @@ def moderateDays(mydict):
 
     # Iterate over each day in the days tuple.
     for day in days:
-        # Check if the average temperature for the current day is between 70 and 79 degrees inclusive.
+        # Check if the average temperature for the current day
+        # between 70 and 79 degrees inclusive.
         if 79 >= mydict[day] >= 70:
-            # If the condition is met, add the current day to the filtered list.
+            # If the condition is met, 
+            # add the current day to the filtered list.
             filtered.append(day)
     # Return the list of filtered days.
     return filtered

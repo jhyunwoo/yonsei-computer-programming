@@ -9,6 +9,7 @@ Lab problem: lab12_p6.py
 # This program provide IntCounter class
 #
 
+
 # Class that count int
 class IntCounter:
     def __init__(self):
@@ -21,23 +22,29 @@ class IntCounter:
         if type(value) is int:  # If type of value is int
             self.count_value += 1  # Increment count_value
             self.total_value += value  # Add value to the total_value
-        elif type(value) is float and value.is_integer():  # if value is float type and value is convertable to int type
+        # if value is float type and value is convertable to int type
+        elif type(value) is float and value.is_integer():
             self.count_value += 1  # Increment count_value
             self.total_value += value  # Add value to the total_value
-        elif type(value) is str and value.isdecimal():  # if value is str type and it can convert to int type
+        # if value is str type and it can convert to int type
+        elif type(value) is str and value.isdecimal():
             self.count_value += 1  # Increment count_value
             self.total_value += int(value)  # Add value to the total_value
 
     def count(self):
         """ Return count value """
-        if float(self.count_value).is_integer():  # if count_value can represent as int type
-            return int(self.count_value)  # Convert count_value to int and return it
+        # if count_value can represent as int type
+        if float(self.count_value).is_integer():
+            # Convert count_value to int and return it
+            return int(self.count_value)
         else:  # if count_value is not convert to int type
             return self.count_value  # Return count value
 
     def total(self):
         """ Return total value """
-        if float(self.total_value).is_integer():  # if total_value can represent as int type
-            return int(self.total_value)  # Convert total_value to int and return it
+        # if total_value can represent as int type
+        if float(self.total_value).is_integer():
+            # Convert total_value to int and return it
+            return int(self.total_value)  
         else:  # if total_value is not convert to int type
             return self.total_value  # Return total value

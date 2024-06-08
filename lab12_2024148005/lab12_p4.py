@@ -8,6 +8,7 @@ Lab problem: lab12_p4.py
 # This program Fraction class that have some utilities
 #
 
+
 def gcd(a, b):
     """
     This function returns the greatest common divisor of a and b.
@@ -42,6 +43,7 @@ def gcd(a, b):
 # Fraction class:
 #
 
+
 # Class that calculating Fraction
 class Fraction(object):
     """
@@ -54,7 +56,8 @@ class Fraction(object):
         """ Method to construct a Fraction object """
         # Check that n and d are of type int:
         if type(n) != int or type(d) != int:  # Check the type of n and d
-            raise ValueError('requires type int')  # if n or d type is incorrect, raise ValueError
+            # if n or d type is incorrect, raise ValueError
+            raise ValueError('requires type int')
         # Check that denominator is non-zero:
         if d == 0:  # if d is 0, raise ZeroDivisionError
             raise ZeroDivisionError('requires non-zero denominator')
@@ -71,13 +74,17 @@ class Fraction(object):
         """ Returns new Fraction representing self * other """
         new_num = self.num * other.num  # Multiply num and input num
         new_denom = self.denom * other.denom  # Multiply denom and input denom
-        return Fraction(new_num, new_denom)  # Create new Fraction class using multiplied variable
+        # Create new Fraction class using multiplied variable
+        return Fraction(new_num, new_denom)  
 
     def __add__(self, other):
         """ Returns new Fraction representing self + other """
-        new_num = self.num * other.denom + other.num * self.denom  # Create new_num using added value
-        new_denom = self.denom * other.denom  # Create new_denom using added value
-        return Fraction(new_num, new_denom)  # Create new Fraction class using added variable
+        # Create new_num using added value
+        new_num = self.num * other.denom + other.num * self.denom
+        # Create new_denom using added value
+        new_denom = self.denom * other.denom
+        # Create new Fraction class using added variable
+        return Fraction(new_num, new_denom)
 
     def __float__(self):
         """ Returns a float-value of the Fraction object """
@@ -86,12 +93,17 @@ class Fraction(object):
     def reduce(self):
         """
         Reduces self to simplest terms.
-        This is done by dividing both numerator and denominator by their greatest common divisor (GCD).
-        Also removes the signs if both numerator and denominator are negative.
+        This is done by dividing both numerator and denominator 
+        by their greatest common divisor (GCD).
+        Also removes the signs if both numerator 
+        and denominator are negative.
         Whole numbers (1, 2, ...) are represented as 1/1, 2/1, 3/1, ...
         """
-        gcd_value = gcd(self.num, self.denom)  # Get GCD of num and denom value using gcd function
-        if type(self.num / gcd_value) is int and type(self.denom / gcd_value) is int:  # if num and denom type is int
+        # Get GCD of num and denom value using gcd function
+        gcd_value = gcd(self.num, self.denom)
+        # if num and denom type is int
+        if (self.num / gcd_value).is_integer() and \
+            (self.denom / gcd_value).is_integer():
             self.num = int(self.num / gcd_value)  # Assign as int type
             self.denom = int(self.denom / gcd_value)  # Assign as int type
         else:  # if num or denom is not int type
@@ -100,5 +112,7 @@ class Fraction(object):
 
     def adjust(self, factor):
         """Multiplies numerator and denominator by factor."""
-        self.num = self.num * factor  # Assign num with multiplied by factor
-        self.denom = self.denom * factor  # Assign denom with multiplied by factor
+        # Assign num with multiplied by factor
+        self.num = self.num * factor
+        # Assign denom with multiplied by factor
+        self.denom = self.denom * factor

@@ -1,3 +1,9 @@
+"""
+Name: Hyunwoo Jeon
+Student ID: 2024148005
+Lab problem: lab12_p3.py
+"""
+
 #
 # This program encrypts or decrypts a file using a random key.
 #
@@ -34,9 +40,11 @@ if file_extension == "txt":
     # Encrypt the file if the extension is .txt
     key = {}  # Dictionary to store the encryption key
     counter = 0  # Variable that count generate random key
-    # Generate the encryption key by mapping each character to a random character from key_characters
+    # Generate the encryption key by mapping each character
+    # to a random character from key_characters
     while len(key_characters) > 0:
-        key[characters[counter]] = key_characters.pop(int(random() * len(key_characters)))
+        key[characters[counter]] = key_characters.pop(int(random()\
+                                            * len(key_characters)))
         counter += 1
     key["="] = "="  # Special character mapping for "="
     key["\n"] = "\n"  # Special character mapping for newline
@@ -49,7 +57,8 @@ if file_extension == "txt":
 
     # Open the output file for the encrypted message
     enc_file = open(filename + ".enc", 'w')
-    # Read each line from the original file and write the encrypted characters to the new file
+    # Read each line from the original file and write 
+    # the encrypted characters to the new file
     for line in original_file:
         for char in line:  # For loop for check all char in line
             enc_file.write(key[char])  # Write encrypted char in file
@@ -58,11 +67,13 @@ if file_extension == "txt":
 
     # Save the encryption key to a .key file
     key_file = open(filename + ".key", 'w')
-    for char in characters:  # Check all char in characters for generate key file
+    # Check all char in characters for generate key file
+    for char in characters:  
         key_file.write(f"{char},{key[char]}\n")  # Write key on the file
     key_file.write("=,=")  # Special character mapping for "="
     key_file.close()  # Close key file
-elif file_extension == "enc":  # Decrypt encrypted file if file extension is .enc
+# Decrypt encrypted file if file extension is .enc
+elif file_extension == "enc":
     try:
         # Open the key file for reading
         key_file = open(filename + ".key", 'r')
@@ -75,10 +86,12 @@ elif file_extension == "enc":  # Decrypt encrypted file if file extension is .en
         key[line.split(",")[1][0]] = line.split(",")[0]
     key_file.close()  # Close key file
 
-    # Open the encrypted file and the output file for the decrypted message
+    # Open the encrypted file and the output file 
+    #   for the decrypted message
     enc_file = open(filename + ".enc", 'r')
     dec_file = open(filename + ".txt", 'w')
-    # Read each line from the encrypted file and write the decrypted characters to the new file
+    # Read each line from the encrypted file and write 
+    # the decrypted characters to the new file
     for line in enc_file:
         for char in line:  # For loop for check all char in line
             if char != "\n":  # If char is not enter sign

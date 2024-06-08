@@ -5,7 +5,8 @@ Lab problem: lab12_p1.py
 """
 
 #
-# This program get dict, day and temperature and if dict does not have day, add day and temperature on dict
+# This program get dict, day and temperature and if dict does not have day,
+# add day and temperature on dict
 #
 
 

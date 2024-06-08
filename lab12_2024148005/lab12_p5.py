@@ -8,6 +8,7 @@ Lab problem: lab12_p5.py
 # Fraction class:
 #
 
+
 # Class that calculating Fraction
 class Fraction(object):
     """
@@ -29,24 +30,33 @@ class Fraction(object):
         self.denom = d
 
     def __str__(self):
-        """ Returns a string representation of the fraction object (self) """
+        """
+        Returns a string representation 
+        of the fraction object (self) 
+        """
         return str(self.num) + '/' + str(self.denom)
 
     def __mul__(self, other):
         """ Returns new Fraction representing self * other """
         if type(other) is int:  # if other type is int
-            return Fraction(self.num * other, self.denom)  # Return new Fraction with multiplied num
+            # Return new Fraction with multiplied num
+            return Fraction(self.num * other, self.denom) 
         elif type(other) is Fraction:  # if other type is Fraction
-            return Fraction(self.num * other.num, self.denom * other.denom)  # Create new Fraction using two Fraction classes
+            # Create new Fraction using two Fraction classes
+            return Fraction(self.num * other.num,\
+                            self.denom * other.denom)
         else:  # Else, raise ValueError
             raise ValueError("value error")
 
     def __add__(self, other):
         """ Returns new Fraction representing self + other """
         if type(other) is int:  # If other type is int
-            return Fraction(self.num + (self.denom * other), self.denom)  # Return added Fraction
+            # Return added Fraction
+            return Fraction(self.num + (self.denom * other), self.denom)
         elif type(other) is Fraction:  # If other type is Fraction
-            return Fraction(self.num * other.denom + other.num * self.denom, self.denom * other.denom)  # Return add two fraction class
+            # Return add two fraction class
+            return Fraction(self.num * other.denom + other.num * self.denom,\
+                            self.denom * other.denom)
         else:  # Else, raise ValueError
             raise ValueError("value error")
 
