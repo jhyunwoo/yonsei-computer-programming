@@ -9,11 +9,13 @@ Lab problem: lab13_p4.py
 # calculate fibonacci sequence using recursive function
 #
 
+
 def fib(n):
     """
     Recursively computes the n-th Fibonacci number.
 
-    :param n : The position in the Fibonacci sequence to compute. Must be a non-negative integer.
+    :param n : The position in the Fibonacci sequence to compute.
+        Must be a non-negative integer.
 
     :return The n-th Fibonacci number.
     """
@@ -24,6 +26,6 @@ def fib(n):
         # Base case: the 1st Fibonacci number is 1
         return 1
     else:
-        # Recursive case: sum of the two preceding Fibonacci numbers
-        return fib(n-1) + fib(n-2)
-    
+        # Recursive case: sum of the two preceding
+        # Fibonacci numbers
+        return fib(n - 1) + fib(n - 2)

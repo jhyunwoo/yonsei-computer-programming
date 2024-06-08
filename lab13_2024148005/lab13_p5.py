@@ -12,11 +12,13 @@ Lab problem: lab13_p5.py
 # Initialize a dictionary to store previously computed Fibonacci numbers
 memo = {}
 
+
 def fib_memo(n):
     """
     Recursively computes the n-th Fibonacci number using memoization.
 
-    :param n The position in the Fibonacci sequence to compute. Must be a non-negative integer.
+    :param n The position in the Fibonacci sequence to compute.
+        Must be a non-negative integer.
     :return The n-th Fibonacci number.
     """
 
@@ -27,7 +29,8 @@ def fib_memo(n):
     elif n == 1:
         return 1
 
-    # Check if the value has already been computed and is stored in the memo dictionary
+    # Check if the value has already been
+    # computed and is stored in the memo dictionary
     if n in memo:
         return memo[n]
     else:

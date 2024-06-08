@@ -29,26 +29,33 @@ class MedianSet(set):
 
         :return The median of the set's numeric values.
 
-        :raise ValueError if any element in the set is not a numeric value.
+        :raise ValueError if any element in the set
+            is not a numeric value.
         """
-        converted_list = []  # Initialize an empty list to store numeric values
+        # Initialize an empty list to store numeric values
+        converted_list = []
         for element in self:
             try:
-                # Try to convert the element to a float and append it to the list if it's not already present
+                # Try to convert the element to a float and
+                # append it to the list if it's not already present
                 if not float(element) in converted_list:
                     converted_list.append(float(element))
             except ValueError:
-                # Raise a ValueError if the element cannot be converted to a float
+                # Raise a ValueError if the element
+                # cannot be converted to a float
                 raise ValueError("All elements must be numeric values.")
+        # Sort the list of numeric values in ascending order
+        converted_list.sort()
 
-        converted_list.sort()  # Sort the list of numeric values in ascending order
-
-        n = len(converted_list)  # Get the number of elements in the list
+        # Get the number of elements in the list
+        n = len(converted_list)
         if n % 2 == 0:
-            # If the number of elements is even, compute the mean of the two middle values
+            # If the number of elements is even,
+            # compute the mean of the two middle values
             median = (converted_list[n // 2] + converted_list[n // 2 - 1]) / 2
         else:
-            # If the number of elements is odd, return the middle value
+            # If the number of elements is odd,
+            # return the middle value
             median = converted_list[n // 2]
 
         return median  # Return the computed median

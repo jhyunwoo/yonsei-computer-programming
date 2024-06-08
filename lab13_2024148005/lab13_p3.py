@@ -29,27 +29,35 @@ class auto_doboggi_man(doboggi_man):
 
     Attributes:
     target : list
-        A list of target positions (coordinates) for the auto_doboggi_man to move towards.
+        A list of target positions (coordinates)
+        for the auto_doboggi_man to move towards.
     danger : bool
-        A flag indicating whether the auto_doboggi_man is in danger of encountering a ghost.
+        A flag indicating whether the auto_doboggi_man
+        is in danger of encountering a ghost.
     """
 
     def __init__(self, x, y):
         """
-        Initializes the auto_doboggi_man with a starting position and default attributes.
+        Initializes the auto_doboggi_man with a
+        starting position and default attributes.
 
-        :param x The initial x-coordinate of the auto_doboggi_man.
-        :param y The initial y-coordinate of the auto_doboggi_man.
+        :param x The initial x-coordinate
+            of the auto_doboggi_man.
+        :param y The initial y-coordinate
+            of the auto_doboggi_man.
         """
         super().__init__(x, y)  # Initialize parent class
-        self.target = []  # Initialize an empty list to store target positions
+        # Initialize an empty list to store target positions
+        self.target = []
         self.danger = False  # Initialize the danger flag to False
 
     def in_danger(self):
         """
-        Checks if the auto_doboggi_man is in danger of encountering a ghost.
+        Checks if the auto_doboggi_man
+        is in danger of encountering a ghost.
 
-        :return True if the auto_doboggi_man is in danger, False otherwise.
+        :return True if the auto_doboggi_man is in danger,
+            False otherwise.
         """
         danger = False  # Initialize the local danger flag to False
 
@@ -58,14 +66,17 @@ class auto_doboggi_man(doboggi_man):
                 ghost_pos = ghost.getPosition()
                 my_pos = self.getPosition()
 
-                # Check vertical distance and horizontal proximity to detect danger
+                # Check vertical distance and
+                # horizontal proximity to detect danger
                 if 10 < ghost_pos[1] - my_pos[1] < 100 and\
                         abs(ghost_pos[0] - my_pos[0]) < 100:
                     danger = True
 
-                # Additional check for wrap-around danger scenario
+                # Additional check for
+                # wrap-around danger scenario
                 if my_pos[0] < 0 and \
-                        WIDTH / 2 - ghost_pos[0] + (WIDTH / 2 + my_pos[0]) < 100:
+                        WIDTH / 2 - ghost_pos[0]\
+                        + (WIDTH / 2 + my_pos[0]) < 100:
                     danger = True
 
         return danger  # Return the danger status
@@ -85,7 +96,8 @@ class auto_doboggi_man(doboggi_man):
         current_pos = self.getPosition()
 
         # Check if the current position matches the first target position
-        if current_pos[0] == self.target[0][0] and current_pos[1] == self.target[0][1]:
+        if current_pos[0] == self.target[0][0] and\
+                current_pos[1] == self.target[0][1]:
             self.target.pop(0)  # Remove the reached target from the list
 
         if not self.in_danger():  # Proceed if not in danger
@@ -108,5 +120,6 @@ class auto_doboggi_man(doboggi_man):
                 else:
                     self.turnNorth()  # Turn north if the gap is positive
 
-                # Move forward by a maximum of 10 units or the gap distance, whichever is smaller
+                # Move forward by a maximum of 10 units or
+                # the gap distance, whichever is smaller
                 self.ttl.forward(min(10, abs(gap)))
